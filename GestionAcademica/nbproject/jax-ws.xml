@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="ws_login">
+      <implementation-class>WebService.ws_login</implementation-class>
+    </service>
+    <service name="ws_persona">
+      <implementation-class>WebService.ws_persona</implementation-class>
+    </service>
+    <service name="ws_EvaluacionAlumno">
+      <implementation-class>WebService.ws_EvaluacionAlumno</implementation-class>
+    </service>
+    <service name="ws_estudios">
+      <implementation-class>WebService.ws_estudios</implementation-class>
+    </service>
+    <service name="ws_solicitudes">
+      <implementation-class>WebService.ws_solicitudes</implementation-class>
+    </service>
+    <service name="ws_sincronizar">
+      <implementation-class>WebService.ws_sincronizar</implementation-class>
+    </service>
+  </services>
+  <clients>
+    <client name="ws_sincronizar">
+      <wsdl-url>http://localhost:8084/GestionAcademica/ws_sincronizar?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8084/GestionAcademica/ws_sincronizar.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">WSExternalObjects</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8084/GestionAcademica/ws_sincronizar?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>WSExternalObjects</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+  </clients>
+  <jsr109>false</jsr109>
+</jax-ws>

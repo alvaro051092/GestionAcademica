@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1 (UNKNOWN_BRANCH-false; 2015-01-15T16:53:43+0100) JAXWS-RI/2.2.10 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://WebService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WebService/">
+
+<xs:element name="calendario" type="tns:calendario"/>
+
+<xs:element name="calendarioAlumno" type="tns:calendarioAlumno"/>
+
+<xs:element name="calendarioDocente" type="tns:calendarioDocente"/>
+
+<xs:element name="carrera" type="tns:carrera"/>
+
+<xs:element name="curso" type="tns:curso"/>
+
+<xs:element name="escolaridad" type="tns:escolaridad"/>
+
+<xs:element name="evaluacion" type="tns:evaluacion"/>
+
+<xs:element name="impactar_inconsistencia" type="tns:impactar_inconsistencia"/>
+
+<xs:element name="impactar_inconsistenciaResponse" type="tns:impactar_inconsistenciaResponse"/>
+
+<xs:element name="inscripcion" type="tns:inscripcion"/>
+
+<xs:element name="materia" type="tns:materia"/>
+
+<xs:element name="materiaPrevia" type="tns:materiaPrevia"/>
+
+<xs:element name="materiaRevalida" type="tns:materiaRevalida"/>
+
+<xs:element name="modulo" type="tns:modulo"/>
+
+<xs:element name="objeto" type="tns:objeto"/>
+
+<xs:element name="objetoCampo" type="tns:objetoCampo"/>
+
+<xs:element name="periodo" type="tns:periodo"/>
+
+<xs:element name="periodoEstudio" type="tns:periodoEstudio"/>
+
+<xs:element name="periodoEstudioAlumno" type="tns:periodoEstudioAlumno"/>
+
+<xs:element name="periodoEstudioDocente" type="tns:periodoEstudioDocente"/>
+
+<xs:element name="periodoEstudioDocumento" type="tns:periodoEstudioDocumento"/>
+
+<xs:element name="persona" type="tns:persona"/>
+
+<xs:element name="planEstudio" type="tns:planEstudio"/>
+
+<xs:element name="retornoMsgObj" type="tns:retornoMsgObj"/>
+
+<xs:element name="sdtPersonaEstudio" type="tns:sdtPersonaEstudio"/>
+
+<xs:element name="sincInconsistenciaDatos" type="tns:sincInconsistenciaDatos"/>
+
+<xs:element name="sincRegistroEliminado" type="tns:sincRegistroEliminado"/>
+
+<xs:element name="sincronizacion" type="tns:sincronizacion"/>
+
+<xs:element name="sincronizacionInconsistencia" type="tns:sincronizacionInconsistencia"/>
+
+<xs:element name="sincronizar" type="tns:sincronizar"/>
+
+<xs:element name="sincronizarResponse" type="tns:sincronizarResponse"/>
+
+<xs:element name="solicitud" type="tns:solicitud"/>
+
+<xs:element name="tipoEvaluacion" type="tns:tipoEvaluacion"/>
+
+<xs:element name="update_fecha" type="tns:update_fecha"/>
+
+<xs:element name="update_fechaResponse" type="tns:update_fechaResponse"/>
+
+<xs:complexType name="impactar_inconsistencia">
+<xs:sequence>
+<xs:element name="cambios" type="tns:retornoMsgObj" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retornoMsgObj">
+<xs:sequence>
+<xs:element name="lstMensajes" type="tns:mensajes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="lstObjetos" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="mensaje" type="tns:mensajes" minOccurs="0"/>
+<xs:element name="objeto" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mensajes">
+<xs:sequence>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoMensaje" type="tns:tipoMensaje" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persona">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="lstEstudios" type="tns:sdtPersonaEstudio" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="perApe" type="xs:string" minOccurs="0"/>
+<xs:element name="perAppTkn" type="xs:string" minOccurs="0"/>
+<xs:element name="perCntIntLgn" type="xs:int" minOccurs="0"/>
+<xs:element name="perCod" type="xs:long" minOccurs="0"/>
+<xs:element name="perDoc" type="xs:string" minOccurs="0"/>
+<xs:element name="perEml" type="xs:string" minOccurs="0"/>
+<xs:element name="perEsAdm" type="xs:boolean" minOccurs="0"/>
+<xs:element name="perEsAlu" type="xs:boolean" minOccurs="0"/>
+<xs:element name="perEsDoc" type="xs:boolean" minOccurs="0"/>
+<xs:element name="perFchLog" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="perFil" type="tns:filial" minOccurs="0"/>
+<xs:element name="perNom" type="xs:string" minOccurs="0"/>
+<xs:element name="perNotApp" type="xs:boolean" minOccurs="0"/>
+<xs:element name="perNotEml" type="xs:boolean" minOccurs="0"/>
+<xs:element name="perNroEstOrt" type="xs:int" minOccurs="0"/>
+<xs:element name="perNroLib" type="xs:int" minOccurs="0"/>
+<xs:element name="perPass" type="xs:string" minOccurs="0"/>
+<xs:element name="perUsrMod" type="xs:string" minOccurs="0"/>
+<xs:element name="perUsrModID" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="sincHelper" abstract="true">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="sdtPersonaEstudio">
+<xs:sequence>
+<xs:element name="escolaridad" type="tns:escolaridad" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="inscripcion" type="tns:inscripcion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="escolaridad">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="alumno" type="tns:persona" minOccurs="0"/>
+<xs:element name="curso" type="tns:curso" minOccurs="0"/>
+<xs:element name="escCalVal" type="xs:double" minOccurs="0"/>
+<xs:element name="escCod" type="xs:long" minOccurs="0"/>
+<xs:element name="escCurVal" type="xs:double" minOccurs="0"/>
+<xs:element name="escFch" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ingresadaPor" type="tns:persona" minOccurs="0"/>
+<xs:element name="materia" type="tns:materia" minOccurs="0"/>
+<xs:element name="modulo" type="tns:modulo" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="curso">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="curCatCod" type="xs:long" minOccurs="0"/>
+<xs:element name="curCod" type="xs:long" minOccurs="0"/>
+<xs:element name="curCrt" type="xs:string" minOccurs="0"/>
+<xs:element name="curDsc" type="xs:string" minOccurs="0"/>
+<xs:element name="curFac" type="xs:string" minOccurs="0"/>
+<xs:element name="curNom" type="xs:string" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="materia">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="matCntHor" type="xs:double" minOccurs="0"/>
+<xs:element name="matCod" type="xs:long" minOccurs="0"/>
+<xs:element name="matNom" type="xs:string" minOccurs="0"/>
+<xs:element name="matPerVal" type="xs:double" minOccurs="0"/>
+<xs:element name="matTpoApr" type="tns:tipoAprobacion" minOccurs="0"/>
+<xs:element name="matTpoPer" type="tns:tipoPeriodo" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="plan" type="tns:planEstudio" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="planEstudio">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="carrera" type="tns:carrera" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="plaEstCatCod" type="xs:long" minOccurs="0"/>
+<xs:element name="plaEstCod" type="xs:long" minOccurs="0"/>
+<xs:element name="plaEstCreNec" type="xs:double" minOccurs="0"/>
+<xs:element name="plaEstDsc" type="xs:string" minOccurs="0"/>
+<xs:element name="plaEstNom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="carrera">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="carCatCod" type="xs:long" minOccurs="0"/>
+<xs:element name="carCod" type="xs:long" minOccurs="0"/>
+<xs:element name="carCrt" type="xs:string" minOccurs="0"/>
+<xs:element name="carDsc" type="xs:string" minOccurs="0"/>
+<xs:element name="carFac" type="xs:string" minOccurs="0"/>
+<xs:element name="carNom" type="xs:string" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="modulo">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="curso" type="tns:curso" minOccurs="0"/>
+<xs:element name="modCntHor" type="xs:double" minOccurs="0"/>
+<xs:element name="modCod" type="xs:long" minOccurs="0"/>
+<xs:element name="modDsc" type="xs:string" minOccurs="0"/>
+<xs:element name="modEstCod" type="xs:long" minOccurs="0"/>
+<xs:element name="modNom" type="xs:string" minOccurs="0"/>
+<xs:element name="modPerVal" type="xs:double" minOccurs="0"/>
+<xs:element name="modTpoPer" type="tns:tipoPeriodo" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="inscripcion">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="aluFchCert" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="aluFchInsc" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="alumno" type="tns:persona" minOccurs="0"/>
+<xs:element name="curso" type="tns:curso" minOccurs="0"/>
+<xs:element name="insCod" type="xs:long" minOccurs="0"/>
+<xs:element name="insGenAnio" type="xs:int" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="personaInscribe" type="tns:persona" minOccurs="0"/>
+<xs:element name="planEstudio" type="tns:planEstudio" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="calendario">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="calCod" type="xs:long" minOccurs="0"/>
+<xs:element name="calFch" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="evaluacion" type="tns:evaluacion" minOccurs="0"/>
+<xs:element name="evlInsFchDsd" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="evlInsFchHst" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="evaluacion">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="curEvl" type="tns:curso" minOccurs="0"/>
+<xs:element name="evlCod" type="xs:long" minOccurs="0"/>
+<xs:element name="evlDsc" type="xs:string" minOccurs="0"/>
+<xs:element name="evlNom" type="xs:string" minOccurs="0"/>
+<xs:element name="evlNotTot" type="xs:double" minOccurs="0"/>
+<xs:element name="matEvl" type="tns:materia" minOccurs="0"/>
+<xs:element name="modEvl" type="tns:modulo" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="tpoEvl" type="tns:tipoEvaluacion" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tipoEvaluacion">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="tpoEvlCod" type="xs:long" minOccurs="0"/>
+<xs:element name="tpoEvlExm" type="xs:boolean" minOccurs="0"/>
+<xs:element name="tpoEvlInsAut" type="xs:boolean" minOccurs="0"/>
+<xs:element name="tpoEvlNom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="calendarioAlumno">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="alumno" type="tns:persona" minOccurs="0"/>
+<xs:element name="calAlCod" type="xs:long" minOccurs="0"/>
+<xs:element name="calendario" type="tns:calendario" minOccurs="0"/>
+<xs:element name="evlCalEst" type="tns:estadoCalendarioEvaluacion" minOccurs="0"/>
+<xs:element name="evlCalFch" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="evlCalObs" type="xs:string" minOccurs="0"/>
+<xs:element name="evlCalPor" type="tns:persona" minOccurs="0"/>
+<xs:element name="evlCalVal" type="xs:double" minOccurs="0"/>
+<xs:element name="evlValFch" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="evlValObs" type="xs:string" minOccurs="0"/>
+<xs:element name="evlValPor" type="tns:persona" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="calendarioDocente">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="calDocCod" type="xs:long" minOccurs="0"/>
+<xs:element name="calendario" type="tns:calendario" minOccurs="0"/>
+<xs:element name="docente" type="tns:persona" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="materiaPrevia">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="matPreCod" type="xs:long" minOccurs="0"/>
+<xs:element name="materia" type="tns:materia" minOccurs="0"/>
+<xs:element name="materiaPrevia" type="tns:materia" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="materiaRevalida">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="inscripcion" type="tns:inscripcion" minOccurs="0"/>
+<xs:element name="matRvlCod" type="xs:long" minOccurs="0"/>
+<xs:element name="materia" type="tns:materia" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="periodo">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="perFchIni" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="perTpo" type="tns:tipoPeriodo" minOccurs="0"/>
+<xs:element name="perVal" type="xs:double" minOccurs="0"/>
+<xs:element name="periCod" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="periodoEstudio">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="materia" type="tns:materia" minOccurs="0"/>
+<xs:element name="modulo" type="tns:modulo" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="periEstCod" type="xs:long" minOccurs="0"/>
+<xs:element name="periodo" type="tns:periodo" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="periodoEstudioAlumno">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="alumno" type="tns:persona" minOccurs="0"/>
+<xs:element name="inscritoPor" type="tns:persona" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="perInsCalFin" type="xs:double" minOccurs="0"/>
+<xs:element name="perInsFchInsc" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="perInsFrz" type="xs:boolean" minOccurs="0"/>
+<xs:element name="periEstAluCod" type="xs:long" minOccurs="0"/>
+<xs:element name="periodoEstudio" type="tns:periodoEstudio" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="periodoEstudioDocente">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="docFchInsc" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="docente" type="tns:persona" minOccurs="0"/>
+<xs:element name="inscritoPor" type="tns:persona" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="periEstDocCod" type="xs:long" minOccurs="0"/>
+<xs:element name="periodoEstudio" type="tns:periodoEstudio" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="periodoEstudioDocumento">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="docAdj" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="docCod" type="xs:long" minOccurs="0"/>
+<xs:element name="docExt" type="xs:string" minOccurs="0"/>
+<xs:element name="docFch" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="docNom" type="xs:string" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="periodo" type="tns:periodoEstudio" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="solicitud">
+<xs:complexContent>
+<xs:extension base="tns:sincHelper">
+<xs:sequence>
+<xs:element name="alumno" type="tns:persona" minOccurs="0"/>
+<xs:element name="funcionario" type="tns:persona" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="solCod" type="xs:long" minOccurs="0"/>
+<xs:element name="solEst" type="tns:estadoSolicitud" minOccurs="0"/>
+<xs:element name="solFchFin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="solFchIng" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="solFchPrc" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="solTpo" type="tns:tipoSolicitud" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="objeto">
+<xs:sequence>
+<xs:element name="lstCampo" type="tns:objetoCampo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="objClsNom" type="xs:string" minOccurs="0"/>
+<xs:element name="objFchMod" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="objNmdQry" type="xs:string" minOccurs="0"/>
+<xs:element name="objNom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="objetoCampo">
+<xs:sequence>
+<xs:element name="objCmpNom" type="xs:string" minOccurs="0"/>
+<xs:element name="objCmpPK" type="xs:boolean" minOccurs="0"/>
+<xs:element name="objCmpTpoDat" type="tns:tipoCampo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sincRegistroEliminado">
+<xs:sequence>
+<xs:element name="objElimCod" type="xs:long" minOccurs="0"/>
+<xs:element name="objeto" type="tns:objeto" minOccurs="0"/>
+<xs:element name="sncObjElimCod" type="xs:long" minOccurs="0"/>
+<xs:element name="sncObjElimFch" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sincronizacion">
+<xs:sequence>
+<xs:element name="lstInconsistencia" type="tns:sincronizacionInconsistencia" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="sncCod" type="xs:long" minOccurs="0"/>
+<xs:element name="sncDur" type="xs:string" minOccurs="0"/>
+<xs:element name="sncEst" type="tns:estadoSincronizacion" minOccurs="0"/>
+<xs:element name="sncFch" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="sncObjCnt" type="xs:int" minOccurs="0"/>
+<xs:element name="sncObjDet" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sincronizacionInconsistencia">
+<xs:sequence>
+<xs:element name="incCod" type="xs:long" minOccurs="0"/>
+<xs:element name="incEst" type="tns:estadoInconsistencia" minOccurs="0"/>
+<xs:element name="lstDatos" type="tns:sincInconsistenciaDatos" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="objeto" type="tns:objeto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sincInconsistenciaDatos">
+<xs:sequence>
+<xs:element name="incObjCod" type="xs:long" minOccurs="0"/>
+<xs:element name="objSel" type="xs:boolean" minOccurs="0"/>
+<xs:element name="objVal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="impactar_inconsistenciaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:retornoMsgObj" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sincronizar">
+<xs:sequence>
+<xs:element name="cambios" type="tns:retornoMsgObj" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sincronizarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:retornoMsgObj" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="update_fecha">
+<xs:sequence>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="update_fechaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:retornoMsgObj" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="tipoMensaje">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ERROR"/>
+<xs:enumeration value="ADVERTENCIA"/>
+<xs:enumeration value="MENSAJE"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipoAprobacion">
+<xs:restriction base="xs:string">
+<xs:enumeration value="EXONERABLE_CON_GANANCIA"/>
+<xs:enumeration value="EXONERABLE_SIN_GANANCIA"/>
+<xs:enumeration value="NO_EXONERABLE_CON_GANANCIA"/>
+<xs:enumeration value="NO_EXONERABLE_SIN_GANANCIA"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipoPeriodo">
+<xs:restriction base="xs:string">
+<xs:enumeration value="MENSUAL"/>
+<xs:enumeration value="SEMESTRAL"/>
+<xs:enumeration value="ANUAL"/>
+<xs:enumeration value="MODULAR"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="filial">
+<xs:restriction base="xs:string">
+<xs:enumeration value="COLONIA"/>
+<xs:enumeration value="ROSARIO"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="estadoCalendarioEvaluacion">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SIN_CALIFICAR"/>
+<xs:enumeration value="CALIFICADO"/>
+<xs:enumeration value="PENDIENTE_VALIDACION"/>
+<xs:enumeration value="PENDIENTE_CORRECCION"/>
+<xs:enumeration value="VALIDADO"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="estadoSolicitud">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SIN_TOMAR"/>
+<xs:enumeration value="TOMADA"/>
+<xs:enumeration value="FINALIZADA"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipoSolicitud">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ESCOLARIDAD"/>
+<xs:enumeration value="CONSTANCIA_ESTUDIO"/>
+<xs:enumeration value="DUPLICADO_FACTURA"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipoCampo">
+<xs:restriction base="xs:string">
+<xs:enumeration value="INT"/>
+<xs:enumeration value="STRING"/>
+<xs:enumeration value="LONG"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="estadoInconsistencia">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CORRECTO"/>
+<xs:enumeration value="CON_ERRORES"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="estadoSincronizacion">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CORRECTO"/>
+<xs:enumeration value="CON_ERRORES"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

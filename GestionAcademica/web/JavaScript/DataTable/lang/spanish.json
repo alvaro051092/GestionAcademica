@@ -1,0 +1,22 @@
+{
+    "lengthMenu": "Registros por página: _MENU_ ",
+    "emptyTable": "No hay datos",
+    "zeroRecords": "No se encontraron registros",
+    "info": "Página _PAGE_ de _PAGES_",
+    "infoEmpty": "",
+    "search": "Buscar:",
+    "select": {
+        "rows": {
+            "_": "%d filas seleccionadas",
+            "0": "",
+            "1": "1 fila seleccionada"
+        }
+    },
+    "paginate": {
+        "first": "Primera",
+        "last": "Ultima",
+        "next": "Siguiente",
+        "previous": "Anterior"
+    },
+    "infoFiltered": "(Filtrado de _MAX_ total de registros)"
+}

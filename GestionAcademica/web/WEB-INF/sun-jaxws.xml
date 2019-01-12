@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="WebService.ws_login" name="ws_login" url-pattern="/ws_login"/>
+  <endpoint implementation="WebService.ws_persona" name="ws_persona" url-pattern="/ws_persona"/>
+  <endpoint implementation="WebService.ws_EvaluacionAlumno" name="ws_EvaluacionAlumno" url-pattern="/ws_EvaluacionAlumno"/>
+  <endpoint implementation="WebService.ws_estudios" name="ws_estudios" url-pattern="/ws_estudios"/>
+  <endpoint implementation="WebService.ws_solicitudes" name="ws_solicitudes" url-pattern="/ws_solicitudes"/>
+  <endpoint implementation="WebService.ws_solicitudes" name="ws_solicitudes" url-pattern="/ws_solicitudes"/>
+  <endpoint implementation="WebService.ws_sincronizar" name="ws_sincronizar" url-pattern="/ws_sincronizar"/>
+</endpoints>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.0.103:3306/sga_ctc_local?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">admin</property>
+    <property name="hibernate.connection.pool_size">10</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <mapping class="Entidad.TipoEvaluacion"/>
+    <mapping class="Entidad.Curso"/>
+    <mapping class="Entidad.Modulo"/>
+    <mapping class="Entidad.Persona"/>
+    <mapping class="Entidad.Carrera"/>
+    <mapping class="Entidad.PlanEstudio"/>
+    <mapping class="Entidad.Materia"/>
+    <mapping class="Entidad.Evaluacion"/>
+    <mapping class="Entidad.Inscripcion"/>
+    <mapping class="Entidad.MateriaRevalida"/>
+    <mapping class="Entidad.Periodo"/>
+    <mapping class="Entidad.PeriodoEstudio"/>
+    <mapping class="Entidad.PeriodoEstudioDocente"/>
+    <mapping class="Entidad.PeriodoEstudioAlumno"/>
+    <mapping class="Entidad.PeriodoEstudioDocumento"/>
+    <mapping class="Entidad.Calendario"/>
+    <mapping class="Entidad.CalendarioDocente"/>
+    <mapping class="Entidad.CalendarioAlumno"/>
+    <mapping class="Entidad.Escolaridad"/>
+    <mapping class="Entidad.Solicitud"/>
+    <mapping class="Entidad.Notificacion"/>
+    <mapping class="Entidad.NotificacionDestinatario"/>
+    <mapping class="Entidad.NotificacionConsulta"/>
+    <mapping class="Entidad.NotificacionBitacora"/>
+    <mapping class="Entidad.Sincronizacion"/>
+    <mapping class="Entidad.Objeto"/>
+    <mapping class="Entidad.ObjetoCampo"/>
+    <mapping class="Entidad.SincInconsistenciaDatos"/>
+    <mapping class="Entidad.SincRegistroEliminado"/>
+    <mapping class="Entidad.ParametroEmail"/>
+    <mapping class="Entidad.Parametro"/>
+    <mapping class="Entidad.SincronizacionInconsistencia"/>
+    <mapping class="Entidad.Version"/>
+    <mapping class="Entidad.WS_User"/>
+    <mapping class="Entidad.WS_UserServicio"/>
+    <mapping class="Entidad.WS_Bit"/>
+    <mapping class="Entidad.Menu"/>
+    <mapping class="Entidad.MateriaPrevia"/>
+    <mapping class="Entidad.NotificacionBandeja"/>
+    <mapping class="Entidad.BitacoraDetalle"/>
+    <mapping class="Entidad.BitacoraProceso"/>
+    <mapping class="Entidad.Archivo"/>
+  </session-factory>
+</hibernate-configuration>

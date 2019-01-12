@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="GestionAcademicaPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>Entidad.Curso</class>
+    <class>Entidad.Modulo</class>
+    <class>Entidad.Persona</class>
+    <class>Entidad.Carrera</class>
+    <class>Entidad.PlanEstudio</class>
+    <class>Entidad.Materia</class>
+    <class>Entidad.Evaluacion</class>
+    <class>Entidad.Inscripcion</class>
+    <class>Entidad.MateriaRevalida</class>
+    <class>Entidad.Periodo</class>
+    <class>Entidad.PeriodoEstudio</class>
+    <class>Entidad.PeriodoEstudioDocente</class>
+    <class>Entidad.PeriodoEstudioAlumno</class>
+    <class>Entidad.Calendario</class>
+    <class>Entidad.CalendarioDocente</class>
+    <class>Entidad.Escolaridad</class>
+    <class>Entidad.Solicitud</class>
+    <class>Entidad.Notificacion</class>
+    <class>Entidad.NotificacionDestinatario</class>
+    <class>Entidad.NotificacionConsulta</class>
+    <class>Entidad.Sincronizacion</class>
+    <class>Entidad.SincronizacionInconsistencia</class>
+    <class>Entidad.Objeto</class>
+    <class>Entidad.ObjetoCampo</class>
+    <class>Entidad.SincInconsistenciaDatos</class>
+    <class>Entidad.Parametro</class>
+    <class>Entidad.ParametroEmail</class>
+    <class>Entidad.WS_User</class>
+    <class>Entidad.WS_UserServicio</class>
+    <class>Entidad.WS_Bit</class>
+    <class>Entidad.Version</class>
+    <class>Entidad.Menu</class>
+    <class>Entidad.MateriaPrevia</class>
+    <class>Entidad.NotificacionBandeja</class>
+    <class>Entidad.SincRegistroEliminado</class>
+    <class>Entidad.TipoEvaluacion</class>
+<exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.0.103:3306/sga_ctc?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="admin"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
